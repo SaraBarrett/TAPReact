@@ -8,6 +8,12 @@ let mySubject = "React";
 const subjects = ['JS', 'CSS', 'React', 'Bases de dados'];
 //vou à base de dados e verifico que o módulo é SQL
 
+let userData = {
+  firstName: 'Sara',
+  lastName: 'Monteiro',
+  title: 'formadora'
+}
+
 function getRandomForSubject(max) {
   return Math.floor(Math.random() * max);
 }
@@ -37,6 +43,21 @@ function MainGoal(){
 )
 }
 
+function Card(props){
+  return(
+       <div className="card">
+        {/* <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button> */}
+        {/* <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p> */}
+        <p>{props.firstName} {props.lastName}</p>
+        <p>{props.title}</p>
+      </div>
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -53,15 +74,19 @@ function App() {
       </div>
       <MainGoal/>
       <h1>Front End Developer: React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      
+      <Card 
+      firstName={userData.firstName}
+      lastName={userData.lastName}
+      title={userData.title}
+      />
+      <Card 
+      firstName='António'
+      title= 'Gestor'
+      />
+      <Card 
+      firstName='Cristina'
+      title='Gestora Pedagógica'
+      />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
