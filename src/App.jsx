@@ -1,12 +1,15 @@
-import { useState } from 'react'
+//import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import MainGoal from './components/MainGoal'
 
-let mySubject = "React";
+/*let mySubject = "React";
 
 const subjects = ['JS', 'CSS', 'React', 'Bases de dados'];
 //vou à base de dados e verifico que o módulo é SQL
+const objectvs = ['Aprender React e construir aplicações incríveis!', 'Fazer interfaces user friendly!', 'Ter o meu código optimizado!'];*/
+const objectvs = ['Aprender React e construir aplicações incríveis!', 'Fazer interfaces user friendly!', 'Ter o meu código optimizado!']
 
 let userData = {
   firstName: 'Sara',
@@ -14,7 +17,7 @@ let userData = {
   title: 'formadora'
 }
 
-function getRandomForSubject(max) {
+/*function getRandomForSubject(max) {
   return Math.floor(Math.random() * max);
 }
 
@@ -24,7 +27,7 @@ let product = {
   name: 'caneta',
   price: 5,
   color: 'yellow'
-};
+};*/
 
 function FirstComponent(){
   return(
@@ -34,14 +37,7 @@ function FirstComponent(){
   )
 }
 
-function MainGoal(){
-  return (
-    <div>
-        <p>O meu objectivo é aprender {mySubject} e construir aplicações incríveis.</p>
-        <p>O objecto é {product.name} e o preço é {product.price} euros</p>
-    </div>
-)
-}
+
 
 function Card(props){
   return(
@@ -59,7 +55,7 @@ function Card(props){
 }
 
 function App() {
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   return (
     <>
@@ -72,7 +68,10 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <MainGoal/>
+      <MainGoal objetivo = {objectvs[0]}/>
+      <MainGoal objetivo = {objectvs[1]}/>
+      <MainGoal objetivo = {objectvs[2]}/>
+      <MainGoal objetivo = 'Construir uma aplicaçao com servidor!'/>
       <h1>Front End Developer: React</h1>
       <Card 
       firstName={userData.firstName}
