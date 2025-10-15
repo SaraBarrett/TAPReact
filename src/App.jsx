@@ -3,12 +3,15 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import MainGoal from './components/MainGoal'
+import FirstComponent from './components/FirstComponent'
+import Card from './components/Card'
 
 /*let mySubject = "React";
 
 const subjects = ['JS', 'CSS', 'React', 'Bases de dados'];
 //vou à base de dados e verifico que o módulo é SQL
-const objectvs = ['Aprender React e construir aplicações incríveis!', 'Fazer interfaces user friendly!', 'Ter o meu código optimizado!'];*/
+*/
+
 const objectvs = ['Aprender React e construir aplicações incríveis!', 'Fazer interfaces user friendly!', 'Ter o meu código optimizado!']
 
 let userData = {
@@ -29,30 +32,6 @@ let product = {
   color: 'yellow'
 };*/
 
-function FirstComponent(){
-  return(
-  <header>
-    <h5>Aqui tenho o meu primeiro componente!</h5>
-  </header>
-  )
-}
-
-
-
-function Card(props){
-  return(
-       <div className="card">
-        {/* <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button> */}
-        {/* <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p> */}
-        <p>{props.firstName} {props.lastName}</p>
-        <p>{props.title}</p>
-      </div>
-  )
-}
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -74,9 +53,9 @@ function App() {
       <MainGoal objetivo = 'Construir uma aplicaçao com servidor!'/>
       <h1>Front End Developer: React</h1>
       <Card 
-      firstName={userData.firstName}
-      lastName={userData.lastName}
-      title={userData.title}
+        firstName={userData.firstName}
+        lastName={userData.lastName}
+        title={userData.title}
       />
       <Card 
       firstName='António'
