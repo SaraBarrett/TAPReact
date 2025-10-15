@@ -1,5 +1,6 @@
 
-export default function Card(props){
+export default function Card({firstName, lastName='Silva', title='Programador'}){
+  
   return(
        <div className="card">
         {/* <button onClick={() => setCount((count) => count + 1)}>
@@ -8,8 +9,8 @@ export default function Card(props){
         {/* <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p> */}
-        <p>{props.firstName} {props.lastName}</p>
-        <p>{props.title}</p>
+        <p>{firstName} {lastName}</p>
+        <p>{title}</p>
       </div>
   )
 }

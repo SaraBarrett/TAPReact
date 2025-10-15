@@ -5,6 +5,9 @@ import './App.css'
 import MainGoal from './components/MainGoal'
 import FirstComponent from './components/FirstComponent'
 import Card from './components/Card'
+import userData from './data/userData'
+import CourseGoal from './components/CourseGoal'
+import courseInfo from './data/courseInfo'
 
 /*let mySubject = "React";
 
@@ -13,12 +16,6 @@ const subjects = ['JS', 'CSS', 'React', 'Bases de dados'];
 */
 
 const objectvs = ['Aprender React e construir aplicações incríveis!', 'Fazer interfaces user friendly!', 'Ter o meu código optimizado!']
-
-let userData = {
-  firstName: 'Sara',
-  lastName: 'Monteiro',
-  title: 'formadora'
-}
 
 /*function getRandomForSubject(max) {
   return Math.floor(Math.random() * max);
@@ -52,10 +49,9 @@ function App() {
       <MainGoal objetivo = {objectvs[2]}/>
       <MainGoal objetivo = 'Construir uma aplicaçao com servidor!'/>
       <h1>Front End Developer: React</h1>
+      <CourseGoal {...courseInfo} />
       <Card 
-        firstName={userData.firstName}
-        lastName={userData.lastName}
-        title={userData.title}
+       {...userData}
       />
       <Card 
       firstName='António'
