@@ -8,6 +8,7 @@ import Card from './components/Card'
 import userData from './data/userData'
 import CourseGoal from './components/CourseGoal'
 import courseInfo from './data/courseInfo'
+import Button from './components/Button'
 
 /*let mySubject = "React";
 
@@ -61,6 +62,8 @@ function App() {
       firstName='Cristina'
       title='Gestora Pedagógica'
       />
+
+      <Button>Submeter</Button>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
