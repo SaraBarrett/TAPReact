@@ -34,14 +34,17 @@ let product = {
 function App() {
   //const [count, setCount] = useState(0)
 
+  let chosenSubject = 'Escolha a matéria:';
+
   //função para o botão de submeter
   function alertPayDate(){
     alert('Atenção à data de pagamento!');
   }
 
   //função que vai tomar conta do clique das matérias
-  function getSubject(){
-    alert('matéria completa');
+  function getSubject(subject){
+    alert('matéria completa de ' + subject);
+    chosenSubject = subject;
   }
 
   return (
@@ -80,11 +83,11 @@ function App() {
 
       <h3>Eventos Dinâmicos</h3>
       <menu>
-          <Button functionForClick={getSubject}>Matéria JS</Button>
-          <Button functionForClick={getSubject}>Matéria React</Button>
-          <Button functionForClick={getSubject}>Matéria SQL</Button>
+          <Button functionForClick={() => getSubject('JS')}>Matéria JS</Button>
+          <Button functionForClick={() =>getSubject('React')}>Matéria React</Button>
+          <Button functionForClick={() =>getSubject('SQL')}>Matéria SQL</Button>
         <div>
-            Conteúdo Dinâmico
+            {chosenSubject}
         </div>
       </menu>
     </>
