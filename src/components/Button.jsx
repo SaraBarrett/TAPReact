@@ -1,3 +1,5 @@
-export default function Button(){
-    return <button>Enviar</button>;
+import './Button.css'
+
+export default function Button({children}){
+    return <button>{children}</button>;
 }
