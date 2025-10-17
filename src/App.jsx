@@ -34,6 +34,16 @@ let product = {
 function App() {
   //const [count, setCount] = useState(0)
 
+  //função para o botão de submeter
+  function alertPayDate(){
+    alert('Atenção à data de pagamento!');
+  }
+
+  //função que vai tomar conta do clique das matérias
+  function getSubject(){
+    alert('matéria completa');
+  }
+
   return (
     <>
       <FirstComponent/>
@@ -63,10 +73,20 @@ function App() {
       title='Gestora Pedagógica'
       />
 
-      <Button>Submeter</Button>
+      <Button functionForClick={alertPayDate}>Submeter</Button>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <h3>Eventos Dinâmicos</h3>
+      <menu>
+          <Button functionForClick={getSubject}>Matéria JS</Button>
+          <Button functionForClick={getSubject}>Matéria React</Button>
+          <Button functionForClick={getSubject}>Matéria SQL</Button>
+        <div>
+            Conteúdo Dinâmico
+        </div>
+      </menu>
     </>
   )
 }
