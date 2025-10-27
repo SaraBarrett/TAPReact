@@ -1,4 +1,3 @@
-//import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -10,6 +9,7 @@ import CourseGoal from './components/CourseGoal'
 import courseInfo from './data/courseInfo'
 import Button from './components/Button'
 import Login from './components/Login'
+import { useState } from 'react'
 
 /*let mySubject = "React";
 
@@ -35,7 +35,11 @@ let product = {
 function App() {
   //const [count, setCount] = useState(0)
 
-  let chosenSubject = 'Escolha a matéria:';
+  //variáveis sem estado
+  //let chosenSubject = 'Escolha a matéria:';
+
+  //estados do react -> useState()
+  const[chosenSubject, setChosenSubject] = useState('Escolha a matéria:');
 
   //função para o botão de submeter
   function alertPayDate(){
@@ -44,8 +48,9 @@ function App() {
 
   //função que vai tomar conta do clique das matérias
   function getSubject(subject){
-    alert('matéria completa de ' + subject);
-    chosenSubject = subject;
+    //alert('matéria completa de ' + subject);
+    setChosenSubject('a matéria é: '+ subject);
+ 
   }
 
   return (
