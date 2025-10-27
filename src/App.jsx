@@ -11,6 +11,7 @@ import Button from './components/Button'
 import Login from './components/Login'
 import { useState } from 'react'
 import Discount from './components/Discount'
+import ReactSubject from './components/ReactSubject'
 
 /*let mySubject = "React";
 
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <>
+    <ReactSubject/>
       <FirstComponent/>
       <div>
         <a href="https://vite.dev" target="_blank">
