@@ -9,6 +9,7 @@ import userData from './data/userData'
 import CourseGoal from './components/CourseGoal'
 import courseInfo from './data/courseInfo'
 import Button from './components/Button'
+import Login from './components/Login'
 
 /*let mySubject = "React";
 
@@ -90,6 +91,8 @@ function App() {
             {chosenSubject}
         </div>
       </menu>
+
+      <Login/>
     </>
   )
 }
