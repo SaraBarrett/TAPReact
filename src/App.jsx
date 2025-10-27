@@ -10,6 +10,7 @@ import courseInfo from './data/courseInfo'
 import Button from './components/Button'
 import Login from './components/Login'
 import { useState } from 'react'
+import Discount from './components/Discount'
 
 /*let mySubject = "React";
 
@@ -98,6 +99,7 @@ function App() {
       </menu>
 
       <Login/>
+      <Discount/>
     </>
   )
 }
