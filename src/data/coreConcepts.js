@@ -39,7 +39,6 @@ export const EXAMPLES = {
     }`,
   },
   jsx: {
-    title: "JSX",
     description:
       "JSX is a syntax extension to JavaScript. It is similar to a template language, but it has full power of JavaScript (e.g., it may output dynamic content).",
     code: `

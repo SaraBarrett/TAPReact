@@ -3,7 +3,7 @@ import Button from './Button';
 import { EXAMPLES } from '../data/coreConcepts';
 
 export default function ReactSubject(){
-    const[description, setDescription] = useState('components');
+    const[description, setDescription] = useState();
 
     function changeSubject(subject){
         setDescription(subject);
@@ -17,11 +17,13 @@ export default function ReactSubject(){
                 <Button functionForClick={() =>changeSubject('props')} >Props</Button>
                 <Button functionForClick={() =>changeSubject('state')} >State</Button>
             </menu>
+            {description && 
             <div>
-                <h4>{EXAMPLES[description].title}</h4>
+                <h4>{EXAMPLES[description].title ? EXAMPLES[description].title : 'título não carregado'}</h4>
                 <p>{EXAMPLES[description].description}</p>
                 
             </div>
+            }
         </div>
     )
 }
