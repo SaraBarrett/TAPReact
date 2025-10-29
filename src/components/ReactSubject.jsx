@@ -13,9 +13,9 @@ export default function ReactSubject(){
         <div>
             <h3>Matéria de React</h3>
             <menu>
-                <Button functionForClick={() =>changeSubject('jsx')} >JSX</Button>
-                <Button functionForClick={() =>changeSubject('props')} >Props</Button>
-                <Button functionForClick={() =>changeSubject('state')} >State</Button>
+                <Button isActive={description == 'jsx'} functionForClick={() =>changeSubject('jsx')} >JSX</Button>
+                <Button isActive={description == 'props'}  functionForClick={() =>changeSubject('props')} >Props</Button>
+                <Button isActive={description == 'state'}  functionForClick={() =>changeSubject('state')} >State</Button>
             </menu>
             {description && 
             <div>

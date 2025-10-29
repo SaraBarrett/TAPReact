@@ -12,6 +12,7 @@ import Login from './components/Login'
 import { useState } from 'react'
 import Discount from './components/Discount'
 import ReactSubject from './components/ReactSubject'
+import Delete from './components/Delete'
 
 /*let mySubject = "React";
 
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <>
+    <Delete/>
     <ReactSubject/>
       <FirstComponent/>
       <div>
