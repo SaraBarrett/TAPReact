@@ -3,8 +3,6 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import MainGoal from './components/MainGoal'
 import FirstComponent from './components/FirstComponent'
-import Card from './components/Card'
-import userData from './data/userData'
 import CourseGoal from './components/CourseGoal'
 import courseInfo from './data/courseInfo'
 import Button from './components/Button'
@@ -13,6 +11,10 @@ import { useState } from 'react'
 import Discount from './components/Discount'
 import ReactSubject from './components/ReactSubject'
 import Delete from './components/Delete'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import Contacts from './pages/Contacts'
+import RootLayout from './components/layouts/rootLayout'
 
 /*let mySubject = "React";
 
@@ -34,8 +36,18 @@ let product = {
   color: 'yellow'
 };*/
 
+const router = createBrowserRouter([
+  {path:'/', 
+  element: <RootLayout/>,
+  children:[
+  {path: '/' ,element: <HomePage/>},
+  {path: '/contacts', element: <Contacts/>}
+  ]}
+]);
 
 function App() {
+
+  return <RouterProvider router={router} />
   //const [count, setCount] = useState(0)
 
   //variáveis sem estado
@@ -75,17 +87,7 @@ function App() {
       <MainGoal objetivo = 'Construir uma aplicaçao com servidor!'/>
       <h1>Front End Developer: React</h1>
       <CourseGoal {...courseInfo} />
-      <Card 
-       {...userData}
-      />
-      <Card 
-      firstName='António'
-      title= 'Gestor'
-      />
-      <Card 
-      firstName='Cristina'
-      title='Gestora Pedagógica'
-      />
+    
 
       <Button functionForClick={alertPayDate}>Submeter</Button>
       <p className="read-the-docs">
