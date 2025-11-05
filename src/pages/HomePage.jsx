@@ -8,5 +8,7 @@ export default function HomePage(){
         <Link to="/subjects">Os meus subjects</Link>
         <br />
         <Link to="/exs">Os meus exs</Link>
+           <br />
+        <Link to="/courses">Cursos do Cesae</Link>
     </div>)
 }

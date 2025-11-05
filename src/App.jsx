@@ -6,7 +6,9 @@ import Contacts from './pages/Contacts'
 import RootLayout from './components/layouts/rootLayout'
 import Subjects from './pages/Subjects'
 import Exs from './pages/Exs'
-
+import ErrorPage from './pages/ErrorPage'
+import Courses from './pages/Courses'
+import Course from './pages/Course'
 /*let mySubject = "React";
 
 const subjects = ['JS', 'CSS', 'React', 'Bases de dados'];
@@ -28,11 +30,14 @@ let product = {
 const router = createBrowserRouter([
   {path:'/', 
   element: <RootLayout/>,
+  errorElement: <ErrorPage/>,
   children:[
-  {path: '/' ,element: <HomePage/>},
-  {path: '/contacts', element: <Contacts/>},
-  {path: '/subjects', element: <Subjects/>},
-  {path: '/exs', element: <Exs/>}
+    {path: '/' ,element: <HomePage/>},
+    {path: '/contacts', element: <Contacts/>},
+    {path: '/subjects', element: <Subjects/>},
+    {path: '/exs', element: <Exs/>},
+    {path: '/courses', element: <Courses/>},
+    {path: '/course/:course_name', element: <Course/>},
   ]}
 ]);
 
