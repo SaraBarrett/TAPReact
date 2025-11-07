@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import ComponentsCard from '../components/ComponentsCard'
+import {CORE_CONCEPTS} from '../data/coreConcepts'
 
 export default function Courses(){
 
@@ -13,6 +15,18 @@ export default function Courses(){
         <Link to='/course/react'>Curso React</Link><br />
         <Link to='/course/laravel'>Curso Laravel</Link><br />
         <Link to='/course/js'>Curso js</Link>
+
+        <div>
+        {CORE_CONCEPTS.map((item) =>
+        <ComponentsCard
+        key= {item.title}
+            {...item}
+        />
+        )
+
+        }    
+        </div>
+
         </div>
     )
 }

@@ -9,6 +9,7 @@ import Exs from './pages/Exs'
 import ErrorPage from './pages/ErrorPage'
 import Courses from './pages/Courses'
 import Course from './pages/Course'
+import ShoppingList from './pages/ShoppingPage'
 /*let mySubject = "React";
 
 const subjects = ['JS', 'CSS', 'React', 'Bases de dados'];
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
     {path: '/exs', element: <Exs/>},
     {path: '/courses', element: <Courses/>},
     {path: '/course/:course_name', element: <Course/>},
+    {path: '/shoppingList', element: <ShoppingList/>}
   ]}
 ]);
 
