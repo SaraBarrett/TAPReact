@@ -1,34 +1,3 @@
 [
-  {
-    "email": "sara.c.mon@gmail.com",
-    "password": "1234",
-    "firstName": "Sara",
-    "lastName": "Monteiro",
-    "role": "student",
-    "termsAccepted": true
-  },
-  {
-    "email": "ss@gmail.com",
-    "password": "ss@gmail.com",
-    "firstName": "Sara",
-    "lastName": "Monteiro",
-    "role": "student",
-    "termsAccepted": true
-  },
-  {
-    "email": "ss@gmail.com",
-    "password": "ss@gmail.com",
-    "firstName": "Sara",
-    "lastName": "Monteiro",
-    "role": "student",
-    "termsAccepted": true
-  },
-  {
-    "email": "saramarmonteiro@gmail.com",
-    "password": "saramarmonteiro@gmail.com",
-    "firstName": "Sara",
-    "lastName": "Monteiro",
-    "role": "teacher",
-    "termsAccepted": true
-  }
+   
 ]
