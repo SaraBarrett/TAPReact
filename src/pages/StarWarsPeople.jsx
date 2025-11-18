@@ -20,8 +20,8 @@ export default function StarWarsPeople(){
     
         {(people && people.length > 0) && (
         <div className="places">
-            {people.map((item) => (
-            <p key={item.name} className="place-item">
+            {people.map((item, count) => (
+            <p key={count} className="place-item">
                 <p>
                 <b>{item.name}</b>: {item.birth_year}, {item.gender}
                 </p>

@@ -6,6 +6,14 @@ useEffect(() => {
     });
 }, []);
 
+useEffect(() => {
+  fetch("http://localhost:3000/user-places")
+    .then((response) => response.json())
+    .then((resData) => {
+      setUserPlaces(resData.places);
+    });
+}, []);
+
 function handleSelectPlace(selectedPlace) {
   setUserPlaces((prevPickedPlaces) => {
     if (!prevPickedPlaces) {
@@ -29,8 +37,6 @@ const handleRemovePlace = useCallback(
     updatePlaces(
       userPlaces.filter((place) => place.id != selectedPlace.current.id)
     );
-
-    setModalIsOpen(false);
   },
   [UserPlaces]
 );
@@ -57,43 +63,45 @@ export async function updatePlaces(userPlaces) {
   return data.message;
 }
 
-
 function handleSubmit(event) {
   event.preventDefault();
   const authData = enteredValues;
 
-  const response = fetch ('http://localhost:3000/login', {
-    method: 'POST',
+  const response = fetch("http://localhost:3000/login", {
+    method: "POST",
     headers: {
-      'Content-Type' : 'application/json',
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(authData),
   })
-  .then((response) => {
-  if(response.ok) {
-  console.log('Response is OK:', response.ok);
-  return response.json();
-  } else {
-  console.error('Response is not OK', response.status, response.statusText);
-  throw new Error('Failed to authenticate');
-  }
-  })
-  .then ((data) => {
-  console.log(data);
-  localStorage.setItem('token', data.token);
-  localStorage.setItem('role', data.role);
-  
-  navigate('/');
-  }).then(() => {
-    navigate('/');
-  });
-  }
+    .then((response) => {
+      if (response.ok) {
+        console.log("Response is OK:", response.ok);
+        return response.json();
+      } else {
+        console.error(
+          "Response is not OK",
+          response.status,
+          response.statusText
+        );
+        throw new Error("Failed to authenticate");
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("role", data.role);
 
-function handleInputChange(identifier, value){
-  setEnteredValues((prevValues) => (
-    {
-      ...prevValues,
-      [identifier]:value
-    }
-  ));
+      navigate("/");
+    })
+    .then(() => {
+      navigate("/");
+    });
+}
+
+function handleInputChange(identifier, value) {
+  setEnteredValues((prevValues) => ({
+    ...prevValues,
+    [identifier]: value,
+  }));
 }
