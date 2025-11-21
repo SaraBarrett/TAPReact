@@ -41,6 +41,15 @@ const handleRemovePlace = useCallback(
   [UserPlaces]
 );
 
+function handleRemovePlace(selectedPlace) {
+  setUserPlaces((prevPickedPlaces) =>
+    prevPickedPlaces.filter((place) => place.id !== selectedPlace.id)
+  );
+
+  updatePlaces(UserPlaces.filter((place) => place.id != selectedPlace.id));
+}
+
+
 function handleStartRemovePlace(place) {
   selectedPlace.current = place;
   handleRemovePlace();

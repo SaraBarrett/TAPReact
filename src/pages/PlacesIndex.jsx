@@ -22,6 +22,16 @@ export default function AvailablePlaces() {
       })
     }, [])
 
+      useEffect(() =>{
+      fetch('http://localhost:3000/user-places')
+      .then((response) => {    
+        return response.json()})
+      .then((resData) =>{
+  
+        setUserPlaces(resData.places)
+      })
+    }, [])
+
     //função que quando clicamos nos lugares disponíveis toma conta do que vamos fazer com esse lugar
     function handleSelectPlace(onSelectPlace){
 
@@ -38,9 +48,17 @@ export default function AvailablePlaces() {
 
 
       //enviar o ficheiro para actualizar no backend os lugares escolhidos
-      updateUserPlaces([onSelectPlace, ...userPlaces])
+   !userPlaces.includes(onSelectPlace) && updateUserPlaces([onSelectPlace, ...userPlaces]);
     }
 
+    //função que toma conta de apagar o lugar clicado nos user places
+    function handleRemovePlace(selectedPlace) {
+      setUserPlaces((prevPickedPlaces) =>
+        prevPickedPlaces.filter((place) => place.id !== selectedPlace.id)
+      );
+    
+      updateUserPlaces(userPlaces.filter((place) => place.id != selectedPlace.id));
+    }
 
 
 
@@ -59,6 +77,7 @@ export default function AvailablePlaces() {
         title="User Places"
         fallbackText="Please Select Places from below"
         places={userPlaces}
+        onSelectPlace={handleRemovePlace}
       />
       <Places
         title="Available Places"
